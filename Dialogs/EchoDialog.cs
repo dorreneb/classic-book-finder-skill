@@ -21,6 +21,8 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
             var message = await argument;
             var response = context.MakeMessage();
 
+            //create Cortana UI with hero card - mention a book to read and list off some information.
+            //Book text from wikipedia.org, image from gutenberg.org hosted on imgur.
             var card = new HeroCard
             {
                 Title = "Cyrano de Bergerac",
@@ -30,6 +32,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
 
             };
 
+            //read the open source version of the play out loud.
             response.Speak = "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"en-US\"><audio src=\"https://ia802702.us.archive.org/31/items/cyranodebergerac_1411_librivox/cyranodebergerac_01_rostand_128kb.mp3\" /></speak>";
 
             response.Attachments.Add(card.ToAttachment());
